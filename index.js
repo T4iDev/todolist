@@ -1,11 +1,13 @@
-const express = require('express')
+const express = require("express");
 const app = express();
 
+const port = 3000;
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-    res.send("Hello Word")
+  res.render("index");
 });
 
-
-app.listen(3000, () => {
-    console.log("Running")
+app.listen(port, () => {
+  console.log(`Running at http://localhost:${port}`);
 });
